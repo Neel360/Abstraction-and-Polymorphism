@@ -1,22 +1,34 @@
 from abc import ABC, abstractmethod
 
+class Animal(ABC):
+    def move(self):
+        pass
+
+class Human(Animal):
+    def move(self):
+        print("I can walk and run.")
+
+class Snake(Animal):
+    def move(self):
+        print("I can slither.")
+
+class Fish(Animal):
+    def move(self):
+        print("I can swim.")
+
+class Ant(Animal):
+    def move(self):
+        print("I can crawl.")
 
 
-class class_abstract(ABC):
+H = Human()
+H.move()
 
-    def print(self,x):
-        print(f"Passed Value: {x}")
+S = Snake()
+S.move()
 
-    @abstractmethod
-    def task(self):
-        print("We are inside class_abstract's task.")
+F = Fish()
+F.move()
 
-
-class test_class(class_abstract):
-    def task(self):
-        print("We are inside test_class' task.")
-    
-
-test_obj = test_class()
-test_obj.task()
-test_obj.print(100)
+A = Ant()
+A.move()
